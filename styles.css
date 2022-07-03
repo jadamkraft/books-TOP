@@ -1,0 +1,55 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    height: 300px;
+    width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 400px;
+}
+
+.addButton {
+    grid-column: 1 / 2;
+    margin: 0 0 0 14px;
+}
+
+.cards button {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 48px;
+}
+
+.card {
+    background-color: white;
+    border-left: 1rem solid #b2b1cf;
+    height: 300px;
+    width: 250px;
+    padding: 0 4px 0 8px;
+    border-radius: 8px;
+    font-family: 'Comfortaa', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card h1 {
+
+}
