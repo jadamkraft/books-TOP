@@ -1,5 +1,6 @@
 /* javascript.js */
 
+const container = document.querySelector('.container');
 const cards = document.querySelector('.cards');
 
 let myLibrary = [{ title: "It", author: "Stephen King", pages: "550", read: "read"}, 
@@ -28,6 +29,11 @@ function displayLibrary() {
 };
 
 function getCards() {
+
+    while (cards.firstChild) {
+        cards.removeChild(cards.firstChild);
+    };
+
     myLibrary.forEach(Book => {
         const card = document.createElement('div');
         card.classList.add('card');
@@ -56,6 +62,9 @@ function getCards() {
 
         cards.appendChild(card);
     });
+};
+
+function getAddButton() {
 
     const newButtonDiv = document.createElement('div')
     newButtonDiv.classList.add('addButton');
@@ -67,7 +76,19 @@ function getCards() {
     addButton.appendChild(buttonText);
     newButtonDiv.appendChild(addButton);
 
-    cards.appendChild(newButtonDiv);
+    container.appendChild(newButtonDiv);
 
-
+    addButton.addEventListener("click", getNewBook);
 };
+
+function getNewBook() {
+    title = window.prompt("Title");
+    author = window.prompt("Author");
+    pages = window.prompt("Pages");
+    read = window.prompt("Have you read it?");
+    const newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook);
+    getCards();
+};
+
+window.onload = getAddButton();

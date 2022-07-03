@@ -10,31 +10,42 @@
 
 .container {
     background-color: black;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr 1fr;
     justify-content: center;
     align-items: center;
+    padding: 12px;
+}
+
+.card-container {
+    display: grid;
 }
 
 .cards {
-    height: 300px;
-    width: 900px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 400px;
+    grid-template-rows: 1fr;
+    padding: 0 0 0 8px;
 }
 
 .addButton {
-    grid-column: 1 / 2;
-    margin: 0 0 0 14px;
+    background-color: black;
+    display: grid;
+    height: 100%;
+    grid-row: 2 / 3;
+    align-items: center;
+    padding: 0 0 0 12px;
 }
 
-.cards button {
+.container button {
     font-family: 'Comfortaa', cursive;
     font-weight: 600;
-    padding: 6px 10px;
+    padding: 6px;
     border-radius: 48px;
+    height: 48px;
+    width: 128px;
 }
 
 .card {
@@ -42,12 +53,12 @@
     border-left: 1rem solid #b2b1cf;
     height: 300px;
     width: 250px;
-    padding: 0 4px 0 8px;
+    padding: 8px 4px 0 8px;
+    margin: 12px 0 0 0;
     border-radius: 8px;
     font-family: 'Comfortaa', cursive;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+
 }
 
 .card h1 {
